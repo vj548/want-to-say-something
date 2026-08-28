@@ -4,7 +4,7 @@
 // ─────────────────────────────────────────────────────────────
 
 export const SITE_CONFIG = {
-   HER_NAME: "Hema", // e.g. "Maya" — shown as "Hey, Maya 👋"
+   HER_NAME: "Hema" as string, // e.g. "Maya" — shown as "Hey, Maya 👋"
   MY_NAME: "Vj",
 
   INTRO_MESSAGE: "I have absolutely no idea how to start this...",
