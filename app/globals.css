@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: 255 92 134;
+  --accent-soft: 255 157 184;
+  --bg: 8 6 10;
+
+  /* System stacks — no external font request needed.
+     Want the exact editorial look from the brief? Swap these
+     for next/font/google's Fraunces (display) + Inter (body);
+     see the note in app/layout.tsx. */
+  --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia,
+    "Times New Roman", serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 92, 134, 0.4) transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--bg));
+  color: #f4ecef;
+  overflow-x: hidden;
+}
+
+.glow-text {
+  text-shadow: 0 0 40px rgb(var(--accent) / 0.35);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.045);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.accent-btn {
+  background: linear-gradient(135deg, rgb(var(--accent)), #b4294f);
+  box-shadow: 0 8px 40px -8px rgb(var(--accent) / 0.55);
+}
+
+.section-shell {
+  min-height: 100svh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 5rem 1.25rem;
+}
+
+.eyebrow {
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  color: rgba(244, 236, 239, 0.5);
+}
+
+::selection {
+  background: rgb(var(--accent) / 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
